@@ -1775,6 +1775,7 @@ SUBROUTINE ScaleTimeSeries(p, V, ErrStat, ErrMsg)
          SpecModel_WF_14D, &
          SpecModel_USRVKM, &
          SpecModel_TIDAL,  &
+         SpecModel_USER,   &
          SpecModel_RIVER   ) ! Do reynolds stress for HYDRO also.
                
    

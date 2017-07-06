@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VisualStudioProject ProjectCreator="Intel Fortran" Keyword="Console Application" Version="11.0" ProjectIdGuid="{9B76F7F4-E04F-4CAE-A34C-27F6FE973710}">
 	<Platforms>
-		<Platform Name="Win32"/></Platforms>
+		<Platform Name="Win32"/>
+		<Platform Name="x64"/></Platforms>
 	<Configurations>
 		<Configuration Name="Debug|Win32" OutputDirectory="..\..\bin">
 				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" Preprocess="preprocessYes" PreprocessorDefinitions="NO_MESHMAPPING" StandardWarnings="standardWarningsF03" DisableSpecificDiagnostics="5268" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebug" UseMkl="mklSequential"/>
@@ -22,6 +23,26 @@
 				<Tool Name="VFPreLinkEventTool"/>
 				<Tool Name="VFPreBuildEventTool"/>
 				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Debug|x64">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" Preprocess="preprocessYes" PreprocessorDefinitions="NO_MESHMAPPING" StandardWarnings="standardWarningsF03" DisableSpecificDiagnostics="5268" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtMultiThreadedDebug" UseMkl="mklSequential"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\TurbSim_$(ConfigurationName)_$(PlatformName).exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" GenerateManifest="false" GenerateDebugInformation="true" SubSystem="subSystemConsole"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release|x64">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" Preprocess="preprocessYes" PreprocessorDefinitions="NO_MESHMAPPING" StandardWarnings="standardWarningsF03" DisableSpecificDiagnostics="5268" UseMkl="mklSequential"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\TurbSim_$(ConfigurationName)_$(PlatformName).exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" SubSystem="subSystemConsole"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
 				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration></Configurations>
 	<Files>
 		<Filter Name="Header Files" Filter="fi;fd"/>
@@ -32,11 +53,16 @@
 		<File RelativePath="..\..\NWTC_Library\source\NetLib\fftpack\fftpack4.1.f">
 			<FileConfiguration Name="Debug|Win32">
 				<Tool Name="VFFortranCompilerTool" StandardWarnings="standardWarningsNone"/></FileConfiguration>
+			<FileConfiguration Name="Release|x64">
+				<Tool Name="VFFortranCompilerTool" StandardWarnings="standardWarningsNone"/></FileConfiguration>
+			<FileConfiguration Name="Debug|x64">
+				<Tool Name="VFFortranCompilerTool" StandardWarnings="standardWarningsNone"/></FileConfiguration>
 			<FileConfiguration Name="Release|Win32">
 				<Tool Name="VFFortranCompilerTool" StandardWarnings="standardWarningsNone"/></FileConfiguration></File>
 		<File RelativePath="..\..\NWTC_Library\source\NetLib\fftpack\NWTC_FFTPACK.f90"/>
 		<File RelativePath="..\..\NWTC_Library\source\NetLib\lapack\NWTC_LAPACK.f90"/></Filter>
 		<Filter Name="NWTC_Library">
+		<Filter Name="source">
 		<File RelativePath="..\..\NWTC_Library\source\ModMesh.f90"/>
 		<File RelativePath="..\..\NWTC_Library\source\ModMesh_Types.f90"/>
 		<File RelativePath="..\..\NWTC_Library\source\NWTC_Base.f90"/>
@@ -45,7 +71,7 @@
 		<File RelativePath="..\..\NWTC_Library\source\NWTC_Library_Types.f90"/>
 		<File RelativePath="..\..\NWTC_Library\source\NWTC_Num.f90"/>
 		<File RelativePath="..\..\NWTC_Library\source\SingPrec.f90"/>
-		<File RelativePath="..\..\NWTC_Library\source\SysIVF.f90"/></Filter>
+		<File RelativePath="..\..\NWTC_Library\source\SysIVF.f90"/></Filter></Filter>
 		<Filter Name="RanLux">
 		<File RelativePath="..\..\Source\dependencies\RNG\RANLUX.f90"/></Filter></Filter>
 		<Filter Name="TurbSim">
